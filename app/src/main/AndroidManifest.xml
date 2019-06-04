@@ -3,6 +3,7 @@
           package="com.keep.live">
 
     <application
+        android:name="com.keep.App"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -35,6 +36,19 @@
             android:name=".service.RemoteService"
             android:process=":remote"
             />
+
+
+        <!-- https://github.com/fanqieVip/keeplive-->
+        <service android:name="com.fanjun.keeplive.service.JobHandlerService"
+                 android:permission="android.permission.BIND_JOB_SERVICE"
+                 android:exported="true"/>
+        <service android:name="com.fanjun.keeplive.service.HideForegroundService"/>
+        <service android:name="com.fanjun.keeplive.service.LocalService"/>
+        <service android:name="com.fanjun.keeplive.service.RemoteService"/>
+
+        <activity android:name="com.fanjun.keeplive.activity.OnePixelActivity"/>
+        <receiver android:name="com.fanjun.keeplive.receiver.NotificationClickReceiver"/>
+        <receiver android:name="com.fanjun.keeplive.receiver.OnepxReceiver"/>
     </application>
 
 </manifest>
